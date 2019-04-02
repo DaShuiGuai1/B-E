@@ -1,3 +1,12 @@
+/*
+Author:Wu
+Date:2019/4/2
+
+Class BandE simulates Bessie and Elsie wash dishes. Here are 3 main processes in BandE, soap, wash and checknumlist. 
+Function soap lists all possibilities that Bessie would make. Function wash lists all numberlists that Elsie could get from the possibilities.
+Function checknumlist would find the max prefix of the numberlists and show the corresponding possibility.
+*/
+
 #pragma once
 #include"ListNode.h"
 #ifndef printlist
