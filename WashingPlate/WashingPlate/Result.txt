@@ -1,0 +1,33 @@
+
+The max prefix is (       3)!
+
+The following stacks are:
+
+
+	Stacks        1:
+					       5       1       4
+							       2       3
+		The sequence is :
+	       2       3       5       1       4
+
+	Stacks        2:
+					       5       1       4
+									       3
+									       2
+		The sequence is :
+	       2       3       5       1       4
+
+	Stacks        3:
+									       4
+							       5       1
+							       2       3
+		The sequence is :
+	       2       3       5       1       4
+
+	Stacks        4:
+									       4
+							       5       1
+									       3
+									       2
+		The sequence is :
+	       2       3       5       1       4
