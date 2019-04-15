@@ -1,7 +1,7 @@
 Environment: Windows 7
 IDE: Visual Studio 2017
 Author: Wu Zhiqiu
-Instructions: To solve the question below ,this program exhausts all possibilities to find the max prefix according the possibilities. The files in the root path are as followings:
+Instructions: To solve the question below ,this program exhausts all possibilities to find the max prefix (according the possibilities). The files in the root path are as followings:
 	Record.txt: listing all possibilities
 	Numbers.txt: listing all prefixs from the possibilities
 	Result.txt: showing the max prefix and listing all possibilities which have the max prefix
