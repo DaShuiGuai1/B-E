@@ -10,7 +10,7 @@ Function checknumlist would find the max prefix of the numberlists and show the 
 #pragma once
 #include"ListNode.h"
 #ifndef printlist
-#define printlist //If the progress is not nesessery, you may add '//' at the start of this line, which would save a lot time.
+//#define printlist //If the progress is not nesessery, you may add '//' at the start of this line, which would save a lot time.
 #endif // !printlist
 
 #include<stdio.h>

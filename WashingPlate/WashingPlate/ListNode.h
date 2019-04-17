@@ -2,7 +2,7 @@
 Author: Wu
 Date:2019/4/2
 
-To build a list , this file provides a class, List, which includes add, delete, get, change functions.
+To build a list , this file provides a class, List, which includes 'add', 'delete', 'get', 'change' etc. functions.
 */
 
 #ifndef listnode
