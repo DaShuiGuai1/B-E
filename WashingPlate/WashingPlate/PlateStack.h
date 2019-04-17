@@ -43,34 +43,6 @@ public:
 			Length = 0;
 		}
 	}
-	//uint visualpop()//先入后出，但是不会消除数据
-	//{
-	//	if (Length > 0)
-	//	{
-	//		static singlenode* tmp = LastNode;
-	//		if (tmp != nullptr)
-	//		{
-	//			if (Length > 0)
-	//			{
-	//				if (tmp->Pre)
-	//				{
-	//					tmp = tmp->Pre;
-	//				}
-	//				else
-	//				{
-	//					;						;
-	//				}
-	//				Length--;
-	//			}
-	//		}
-	//		return *((uint*)tmp->Value);
-	//	}
-	//	else
-	//	{
-	//		printf("pop failed, stack leak");
-	//		system("pause"); 
-	//	}
-	//}
 	void push(uint * num)
 	{
 		if (Add(num) != SUCCESS)
@@ -106,7 +78,7 @@ public:
 			((Stack *)(stacklist.Get(i)))->~Stack();
 			delete stacklist.Get(i);//泄露1，没有delete stacklist
 		}
-		stacklist.~List();
+		//stacklist.~List();
 	}
 	uint getstackquantity()
 	{
@@ -162,9 +134,14 @@ public:
 			memset(numbers, 0, length);
 			if (this->stacklist.GetLength() > 0)//确认有stack进行pop
 			{
-				for (uint i = stacklist.GetLength(); i >=1 ; i--)//循环每个stack
+				/*optimization 2019/4/17*/
+				Stack* tmp = nullptr;
+				singlenode ** next = (singlenode **)((char*)(&stacklist) + sizeof(int *));
+				singlenode *node = *next;
+				for (uint i = stacklist.GetLength(); i >=1 ; i--,node=node->Pre)//循环每个stack
 				{
-					Stack* tmp = (Stack*)stacklist.Get(i);
+					tmp = (Stack *)node->Value;
+					/*optimization 2019/4/17*/
 					if (tmp)
 					{
 						for (uint r = tmp->GetLength(); r >=1 ; r--)//pop每个stack中的每个plate
@@ -217,6 +194,10 @@ public:
 			((Stack*)stacklist.Get(i))->printtxt(file);
 		}
 	}
+	singlenode * GetNext(singlenode * next)
+	{
+		return stacklist.GetNext(next);
+	}
 private:
 	List stacklist;//盘子堆的list
 };
@@ -255,12 +236,12 @@ public:
 			AllPStacks.Del(1);//删除每种情况
 			//泄露情况3：忘了delete和del操作
 		}
-		AllPStacks.~List();
+		//AllPStacks.~List();
 		for (uint i = 1; i <= plateseq.GetLength(); i++)
 		{
 			delete[](uint*)(plateseq.Get(i));
 		}
-		plateseq.~List();
+		//plateseq.~List();
 		fclose(ptxt);
 		fclose(presult);
 	}
@@ -324,9 +305,14 @@ public:
 		plateseq.Clear();
 		if (AllPStacks.GetLength()>0)
 		{
-			for (uint i = 1 ; i <= AllPStacks.GetLength(); i++)//循环所有情况
+			/*//optimization,2019/4/17*/
+			PStacks * tmpstacks = nullptr;
+			singlenode ** next = (singlenode **)((char *)&AllPStacks + sizeof(int)+ sizeof(singlenode *));
+			singlenode * node = *next;
+			for (uint i = 1 ; i <= AllPStacks.GetLength(); i++,node=node->Next)//循环所有情况
 			{
-				PStacks * tmpstacks = ((PStacks*)AllPStacks.Get(i));
+				tmpstacks = (PStacks*)(node->Value);
+				/*//optimization,2019/4/17*/
 				if(tmpstacks)//每种情况均pop，存于plateseq
 				{
 					uint *tmpint = new uint[platenum[0]];

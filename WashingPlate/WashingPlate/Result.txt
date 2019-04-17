@@ -1,117 +1,56 @@
 
-The max prefix is (       4)!
+The max prefix is (       6)!
 
 The following stacks are:
 
 
 	Stacks        1:
-	       1       2       3       5       4
+													       7       6       4
+															       8       9
+															       3       5
+															       1       2
 		The sequence is :
-	       1       2       3       5       4
+	       1       2       3       5       8       9       7       6       4
 
 	Stacks        2:
-			       2       3       5       4
-									       1
+													       7       6       4
+															       8       9
+															       3       5
+																	       2
+																	       1
 		The sequence is :
-	       1       2       3       5       4
+	       1       2       3       5       8       9       7       6       4
 
 	Stacks        3:
-					       3       5       4
-							       1       2
+													       8       6       4
+															       7       9
+															       3       5
+															       1       2
 		The sequence is :
-	       1       2       3       5       4
+	       1       2       3       5       7       9       8       6       4
 
 	Stacks        4:
-					       3       5       4
-									       2
-									       1
+													       8       6       4
+															       7       9
+															       3       5
+																	       2
+																	       1
 		The sequence is :
-	       1       2       3       5       4
+	       1       2       3       5       7       9       8       6       4
 
 	Stacks        5:
-							       5       4
-					       1       2       3
+													       8       7       4
+															       6       9
+															       3       5
+															       1       2
 		The sequence is :
-	       1       2       3       5       4
+	       1       2       3       5       6       9       8       7       4
 
 	Stacks        6:
-							       5       4
-							       2       3
-									       1
+													       8       7       4
+															       6       9
+															       3       5
+																	       2
+																	       1
 		The sequence is :
-	       1       2       3       5       4
-
-	Stacks        7:
-							       5       4
-									       3
-							       1       2
-		The sequence is :
-	       1       2       3       5       4
-
-	Stacks        8:
-							       5       4
-									       3
-									       2
-									       1
-		The sequence is :
-	       1       2       3       5       4
-
-	Stacks        9:
-									       4
-			       1       2       3       5
-		The sequence is :
-	       1       2       3       5       4
-
-	Stacks       10:
-									       4
-					       2       3       5
-									       1
-		The sequence is :
-	       1       2       3       5       4
-
-	Stacks       11:
-									       4
-							       3       5
-							       1       2
-		The sequence is :
-	       1       2       3       5       4
-
-	Stacks       12:
-									       4
-							       3       5
-									       2
-									       1
-		The sequence is :
-	       1       2       3       5       4
-
-	Stacks       13:
-									       4
-									       5
-					       1       2       3
-		The sequence is :
-	       1       2       3       5       4
-
-	Stacks       14:
-									       4
-									       5
-							       2       3
-									       1
-		The sequence is :
-	       1       2       3       5       4
-
-	Stacks       15:
-									       4
-									       5
-									       3
-							       1       2
-		The sequence is :
-	       1       2       3       5       4
-
-	Stacks       16:
-									       4
-									       5
-									       3
-									       2
-									       1
-		The sequence is :
-	       1       2       3       5       4
+	       1       2       3       5       6       9       8       7       4
